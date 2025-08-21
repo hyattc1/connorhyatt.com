@@ -78,12 +78,6 @@ Deploy to Vercel:
 
 MIT
 
-## Featured on YouTube!
-
-📺 **[Live Portfolio Review by Anthony Sistilli](https://www.youtube.com/watch?v=aUJiNyb3cvM&t=40s)** - Got reviewed live on his stream!
-
-🔥 [Started a trend?](https://youtu.be/ib-Nlg9qWBw?si=1atsKJyfYDXtFVnE&t=400) - Apparently this portfolio design inspired others!
-
 ---
 
 Feel free to fork and make it your own! Would love to see what you guys build with it ✨

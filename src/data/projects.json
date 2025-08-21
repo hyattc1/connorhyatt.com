@@ -1,53 +1,44 @@
 {
   "projects": [
     {
-      "name": "TT4D",
-      "description": "Generate winning combinations, view past results, and analyze lottery trends all in one place",
-      "image": "/tt4d.png",
+      "name": "Social Media Sentiment Analysis",
+      "description": "NLP Pipeline analyzing 50,000+ senator posts, generating sentiment scores, classifying ideological leanings, and uncovering communication patterns.",
+      "image": "/senate.jpg",
       "tags": [
         "Python",
-        "FastAPI",
-        "Docker",
-        "Fly.io",
-        "NextJS",
-        "PostgreSQL",
-        "TailwindCSS",
-        "BS4"
+        "Matplotlib",
+        "NumPy",
+        "Natural Language Toolkit",
+        "Pandas"
       ],
       "links": [
         {
-          "name": "Website",
-          "href": "https://huatnumbers.com",
-          "icon": "globe"
-        },
-        {
           "name": "Source",
-          "href": "https://github.com/tedawf/tt4d",
-          "icon": "github"
-        },
-        {
-          "name": "Source (UI)",
-          "href": "https://github.com/tedawf/tt4d-web",
+          "href": "https://github.com/hyattc1/social-media-sentiment-analysis",
           "icon": "github"
         }
       ]
     },
     {
-      "name": "Tradingview Telegram Alerts",
-      "description": "Real-time trading alerts with chart snapshots sent to Telegram, designed to keep traders informed and responsive to market changes",
-      "image": "/tv-tele-alerts.png",
+      "name": "Propwise",
+      "description": "Real-time risk analysis tool for real estate investors, designed to help them make informed decisions based on historical data and market trends.",
+      "image": "/real-estate.jpg",
       "tags": [
-        "Python",
-        "FastAPI",
-        "Docker",
-        "Fly.io",
-        "Selenium",
-        "Telegram Bot API"
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Library here",
+        "Insert the API"
       ],
       "links": [
         {
+          "name": "Extension",
+          "href": "https://github.com/hyattc1/Real-Estate-Risk-Analysis",
+          "icon": "chrome"
+        },
+        {
           "name": "Source",
-          "href": "https://github.com/tedawf/tradingview-telegram-alerts",
+          "href": "https://github.com/hyattc1/Real-Estate-Risk-Analysis",
           "icon": "github"
         }
       ]

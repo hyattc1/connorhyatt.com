@@ -16,8 +16,21 @@ import Link from "next/link";
 import path from "path";
 
 const blogDirectory = path.join(process.cwd(), "content");
-const TED_BIRTH_YEAR = 1997;
+const CONNOR_BIRTH_DATE = new Date(2004, 6, 6); // July 6, 2004 (month is 0-indexed)
 const LIMIT = 2; // max show 2
+
+// Function to calculate exact age
+function calculateAge(birthDate: Date): number {
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  
+  return age;
+}
 
 export default async function Home() {
   const posts = await getPosts(blogDirectory, LIMIT);
@@ -27,30 +40,29 @@ export default async function Home() {
       <section className="flex flex-col items-start gap-8 md:flex-row-reverse md:items-center md:justify-between">
         <Image
           className="rounded-lg"
-          src="/ted.jpg"
-          alt="Photo of Ted"
+          src="/connor.jpg"
+          alt="Photo of Connor"
           width={175}
           height={175}
           priority
         />
         <div className="flex max-w-[320px] flex-col sm:max-w-full">
-          <h1 className="title text-balance text-4xl sm:text-5xl">
-            hi ted here. 👋
-          </h1>
+                     <h1 className="title text-balance text-4xl sm:text-5xl">
+            hi connor here. ✌
+           </h1>
 
-          <p className="mt-2 whitespace-nowrap text-sm font-medium sm:text-base">
-            {new Date().getFullYear() - TED_BIRTH_YEAR}
-            yo software engineer from Singapore 🇸🇬
-          </p>
+                     <p className="mt-2 whitespace-nowrap text-sm font-medium sm:text-base">
+             {calculateAge(CONNOR_BIRTH_DATE)}
+             yo student from Pittsburgh, PA, USA
+           </p>
 
           <p className="mt-4 max-w-sm text-balance text-sm sm:text-base">
-            Backend by trade, full-stack by passion. I build and self-host the
-            lot.
+            Analytics first, tech second. I uncover meaning in data and build tools that work.
           </p>
 
           <div className="mt-6 flex items-center gap-1">
             <p className="text-balance text-sm font-semibold sm:text-base">
-              For Q&A, raise a ticket with Ted Support
+              For Q&A, raise a ticket with Connor Support
             </p>
             <ArrowDownRight className="hidden size-5 animate-bounce sm:block" />
             <ArrowDown className="block size-5 animate-bounce sm:hidden" />
@@ -59,12 +71,12 @@ export default async function Home() {
           <p className="mt-1 text-xs font-light">
             For escalations, please find my
             <Link
-              href="https://www.instagram.com/gomugomu.cat"
+              href="https://www.linkedin.com/in/connorhyatt"
               target="_blank"
               className="link font-semibold"
-              title="meow"
+              title="LinkedIn"
             >
-              &nbsp;Ted Lead&nbsp;
+              &nbsp;Connor Lead&nbsp;
             </Link>
             instead.
           </p>

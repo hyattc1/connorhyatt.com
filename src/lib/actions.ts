@@ -18,9 +18,12 @@ export async function sendEmail(data: ContactFormInputs) {
 
   try {
     const { name, email, message } = result.data;
+    const toEmail = process.env.CONTACT_TO_EMAIL ?? "connorhyatt1@gmail.com";
+    const fromEmail =
+      process.env.RESEND_FROM ?? "connorhyatt.com <onboarding@resend.dev>";
     const { data, error } = await resend.emails.send({
-      from: `tedawf.com <contact@tedawf.com>`,
-      to: "hello@tedawf.com",
+      from: fromEmail,
+      to: toEmail,
       replyTo: [email],
       cc: [email],
       subject: `New message from ${name}!`,

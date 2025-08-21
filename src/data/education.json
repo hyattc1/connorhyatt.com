@@ -1,16 +1,16 @@
 {
   "education": [
     {
-      "name": "Digipen Institute of Technology Singapore",
-      "href": "https://www.digipen.edu.sg",
-      "title": "BS in Computer Science in Real-Time Interactive Simulation",
-      "logo": "/digipen.png",
-      "start": "Sep 2019",
-      "end": "Apr 2023",
+      "name": "Carnegie Mellon University",
+      "href": "https://www.cmu.edu",
+      "title": "BS in Information Systems in Real-Time Interactive Simulation",
+      "logo": "/cmu.jpg",
+      "start": "Aug 2023",
+      "end": "May 2027",
       "description": [
-        "Graduated with a Minor in Mathematics",
-        "President of Digipen Student Management Committee for freshman year",
-        "3-time recipient of the Dean's Honor List"
+        "Pursuing with a Minor in AI Management",
+        "In the process of founding a Financial Planning Club",
+        "2-time recipient of the Dean's Honor List"
       ],
       "links": [
         {
@@ -26,12 +26,19 @@
       ]
     },
     {
-      "name": "Singapore Polytechnic",
+      "name": "Upper St. Clair High School",
       "href": "https://www.sp.edu.sg",
-      "title": "Diploma in Games Design and Development",
-      "logo": "/sp.png",
-      "start": "Apr 2014",
-      "end": "May 2017"
+      "title": "Academic Foundation",
+      "logo": "/usc.png",
+      "start": "Apr 2019",
+      "end": "May 2023",
+      "description": [
+        "President of Ski Club",
+        "PA HS Japanese Speech Competition Winner",
+        "VEX World Robotics Championship - 3rd Place Skills Challenge",
+        "Volleyball, Football, & Golf Teams",
+        "Dean's List Character Award"
+      ]
     }
   ]
 }
