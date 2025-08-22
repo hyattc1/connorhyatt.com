@@ -3,7 +3,7 @@
     {
       "name": "Social Media Sentiment Analysis",
       "description": "NLP Pipeline analyzing 50,000+ senator posts, generating sentiment scores, classifying ideological leanings, and uncovering communication patterns.",
-      "image": "/senate.jpg",
+      "image": "/senate.png",
       "tags": [
         "Python",
         "Matplotlib",
@@ -66,20 +66,15 @@
       ]
     },
     {
-      "name": "Portfolio 2023 (Outdated)",
-      "description": "Simple markdown portfolio made with Astro 🚀",
-      "href": "https://tedawf-dot-com.netlify.app",
-      "image": "/old-portfolio.png",
-      "tags": ["Astro", "TailwindCSS", "Netlify", "SEO"],
+      "name": "Phantom Reload",
+      "description": "Navigate haunted corridors packed with pathfinding enemies using a laser pointer with OpenCV to guide aim.",
+      "href": "https://github.com/hyattc1/computer-vision-raycaster",
+      "image": "/raycaster.png",
+      "tags": ["Python", "OpenCV", "Pygame"],
       "links": [
         {
-          "name": "Website",
-          "href": "https://tedawf-dot-com.netlify.app",
-          "icon": "globe"
-        },
-        {
           "name": "Source",
-          "href": "https://github.com/tedawf/portfolio-2023",
+          "href": "https://github.com/hyattc1/computer-vision-raycaster",
           "icon": "github"
         }
       ]
