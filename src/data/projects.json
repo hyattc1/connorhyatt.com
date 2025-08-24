@@ -94,16 +94,16 @@
       ]
     },
     {
-      "name": "Glowing Under (2nd Year)",
-      "description": "2D platformer with a focus on puzzle-solving, no-death exploration and storytelling",
-      "href": "https://games.digipen.edu/games/glowing-under",
-      "image": "/gu.png",
-      "tags": ["C/C++", "OpenGL", "Custom Game Engine", "2D"],
+      "name": "Portfolio 2024 (outdated)",
+      "description": "Simple website that showcases my projects and skills.",
+      "href": "https://github.com/hyattc1/Portfolio",
+      "image": "/old-portfolio.png",
+      "tags": ["HTML", "CSS", "JavaScript", "jQuery"],
       "links": [
         {
-          "name": "Trailer",
-          "href": "https://www.youtube.com/watch?v=u6RYwBZlSfg",
-          "icon": "youtube"
+          "name": "Source",
+          "href": "https://github.com/hyattc1/Portfolio",
+          "icon": "github"
         }
       ]
     }
