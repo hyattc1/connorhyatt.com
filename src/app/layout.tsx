@@ -18,8 +18,17 @@ const calistoga = Calistoga({
 });
 
 export const metadata: Metadata = {
-  title: "Ted Thoughts",
+  title: "Connor Hyatt",
   description: "My personal site to showcase my developer work and opinions.",
+  icons: {
+    icon: [
+      { url: '/CHlogo.png?v=3', type: 'image/png' },
+      { url: '/CHlogo.png?v=3', sizes: '32x32', type: 'image/png' },
+      { url: '/CHlogo.png?v=3', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/CHlogo.png?v=3',
+    apple: '/CHlogo.png?v=3',
+  },
 };
 
 export default function RootLayout({
@@ -29,6 +38,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/png" href="/CHlogo.png?v=3" />
+        <link rel="shortcut icon" type="image/png" href="/CHlogo.png?v=3" />
+        <link rel="apple-touch-icon" href="/CHlogo.png?v=3" />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",

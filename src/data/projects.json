@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "name": "Ferretti Yachts Database Construction",
+      "description": "This project involved the construction of a database for Ferretti Yachts. The database was designed to store and manage information.",
+      "href": "https://games.digipen.edu/games/rapid-ride-fight",
+      "image": "/ferretti.png",
+      "tags": [
+        "MySQL",
+        "Excel",
+        "SQL",
+        "Vertabelo"
+      ],
+      "links": [
+        {
+          "name": "Report",
+          "href": "/ferretti_report.pdf",
+          "icon": "file-text"
+        }
+      ]
+    },
+    {
       "name": "Social Media Sentiment Analysis",
       "description": "NLP Pipeline analyzing 50,000+ senator posts, generating sentiment scores, classifying ideological leanings, and uncovering communication patterns.",
       "image": "/senate.png",
@@ -44,24 +63,19 @@
       ]
     },
     {
-      "name": "NFTVue",
-      "description": "Non-Fungible Tokens (NFTs) Gallery Viewer website that allows users to connect their crypto wallets to view and verify their tokens",
-      "href": "https://nftvue.vercel.app",
-      "image": "/nftvue.png",
+      "name": "One Piece Baseball",
+      "description": "This game features an interface inspired by the anime ワンピース, allowing users to pitch, hit, and field their way to victory",
+      "href": "https://github.com/hyattc1/one-piece-baseball",
+      "image": "/onepiecebaseball.png",
       "tags": [
-        "NextJS",
-        "TailwindCSS",
-        "MetaMask",
-        "WalletConnect",
-        "Web3",
-        "NFTScan",
-        "HashKey DID"
+        "Python",
+        "CMU Graphics"
       ],
       "links": [
         {
-          "name": "Website",
-          "href": "https://nftvue.vercel.app",
-          "icon": "globe"
+          "name": "Source",
+          "href": "https://github.com/hyattc1/one-piece-baseball",
+          "icon": "github"
         }
       ]
     },
@@ -76,25 +90,6 @@
           "name": "Source",
           "href": "https://github.com/hyattc1/computer-vision-raycaster",
           "icon": "github"
-        }
-      ]
-    },
-    {
-      "name": "Rapid Ride Fight (Final Year)",
-      "description": "3D capture-the-flag, multiplayer boat fighting, with smart AI and water graphics",
-      "href": "https://games.digipen.edu/games/rapid-ride-fight",
-      "image": "/rrf.png",
-      "tags": ["C/C++", "OpenGL", "Custom Game Engine", "3D"],
-      "links": [
-        {
-          "name": "Gameplay",
-          "href": "https://www.youtube.com/watch?v=bge3fiypg5U",
-          "icon": "youtube"
-        },
-        {
-          "name": "Trailer",
-          "href": "https://www.youtube.com/watch?v=PNAO-aI1Daw",
-          "icon": "youtube"
         }
       ]
     },

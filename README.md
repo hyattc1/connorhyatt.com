@@ -6,15 +6,15 @@ A clean, minimal portfolio website built with Next.js, Tailwind CSS, and Shadcn 
 
 ## Live Demo
 
-🌐 Check it out here: **[https://tedawf.com](https://tedawf.com)**
+🌐 Check it out here: **[https://connorhyatt.com](https://connorhyatt.com)**
 
-![Portfolio Screenshot](public/tedawf-com-2.png)
+![Portfolio Screenshot](public/connorhyatt-com.png)
 
 ## Features
 
 - Minimal design with Shadcn UI
 - Light/dark mode toggle
-- AI chatbot (Ted Support) trained on my portfolio content - please be nice to him! 😊
+- AI chatbot (Connor Support) trained on my portfolio content - please be nice to him! 😊
 - Contact form with email integration
 - Responsive mobile design
 - Blog section
