@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     });
 
     const chatModel = new ChatOpenAI({
-      model: "gpt-3.5-turbo-0125",
+      model: "gpt-4o-mini",
       streaming: true,
       callbacks: [handlers],
       verbose: true, // logs to console
@@ -37,7 +37,7 @@ export async function POST(req: Request) {
     });
 
     const rephraseModel = new ChatOpenAI({
-      model: "gpt-3.5-turbo-0125",
+      model: "gpt-4o-mini",
       verbose: true,
       cache,
     });

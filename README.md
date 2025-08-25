@@ -33,8 +33,8 @@ A clean, minimal portfolio website built with Next.js, Tailwind CSS, and Shadcn 
 ## Getting Started
 
 ```bash
-git clone https://github.com/tedawf/tedawf.com ted-portfolio
-cd ted-portfolio
+git clone https://github.com/hyattc1/connorhyatt.com connor-portfolio
+cd connor-portfolio
 npm install
 cp .env.example .env.local
 # Add your own API keys to .env.local
