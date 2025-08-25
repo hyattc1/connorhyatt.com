@@ -59,19 +59,24 @@ async function generateEmbeddings() {
   const dataSplitter = RecursiveCharacterTextSplitter.fromLanguage("js");
   const splitData = await dataSplitter.splitDocuments(data);
 
-  // blog posts
+  // blog posts and background info
   const postLoader = new DirectoryLoader(
     "content",
     {
       ".mdx": (path) => new TextLoader(path),
+      ".md": (path) => new TextLoader(path),
     },
     true,
   );
 
   const posts = (await postLoader.load())
-    .filter((post) => post.metadata.source.endsWith(".mdx"))
+    .filter((post) => post.metadata.source.endsWith(".mdx") || post.metadata.source.endsWith(".md"))
     .map((post): DocumentInterface => {
-      const pageContentTrimmed = post.pageContent.split("---")[1]; // only want the frontmatter
+      // For .mdx files, only get content after frontmatter
+      // For .md files, use the entire content
+      const pageContentTrimmed = post.metadata.source.endsWith(".mdx") 
+        ? post.pageContent.split("---")[1] 
+        : post.pageContent;
 
       return { pageContent: pageContentTrimmed, metadata: post.metadata };
     });
