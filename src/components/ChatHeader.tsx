@@ -1,3 +1,5 @@
+import Icon from "./Icon";
+
 export default function ChatHeader() {
   return (
     <section className="flex w-full items-center justify-start gap-3">

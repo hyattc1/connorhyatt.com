@@ -21,11 +21,11 @@ export default function Chat() {
     error,
   } = useChat();
 
-  const { isVisible } = useChatbot();
+  const { isVisible, isOpen, toggleAccordion } = useChatbot();
 
   return (
     isVisible && (
-      <Accordion type="single" collapsible className="flexs relative z-40">
+      <Accordion type="single" collapsible className="flexs relative z-40" value={isOpen ? "item-1" : ""} onValueChange={toggleAccordion}>
         <AccordionItem
           value="item-1"
           className="fixed bottom-8 right-8 w-80 rounded-md border bg-background"

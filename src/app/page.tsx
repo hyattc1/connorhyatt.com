@@ -4,12 +4,14 @@ import Posts from "@/components/Posts";
 import Projects from "@/components/Projects";
 import Socials from "@/components/Socials";
 import { Button } from "@/components/ui/Button";
+import ClickableConnorSupport from "@/components/ClickableConnorSupport";
 import { getPosts } from "@/lib/posts";
 import {
   ArrowDown,
   ArrowDownRight,
   ArrowRightIcon,
   FileDown,
+  Info,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,10 +64,16 @@ export default async function Home() {
 
           <div className="mt-6 flex items-center gap-1">
             <p className="text-balance text-sm font-semibold sm:text-base">
-              For Q&A, raise a ticket with Connor Support
+              For Q&A, raise a ticket with <ClickableConnorSupport />
             </p>
-            <ArrowDownRight className="hidden size-5 animate-bounce sm:block" />
-            <ArrowDown className="block size-5 animate-bounce sm:hidden" />
+            <div className="group relative">
+              <Info className="hidden size-5 animate-bounce text-foreground group-hover:text-muted-foreground transition-colors sm:block" />
+              <Info className="block size-5 animate-bounce text-foreground group-hover:text-muted-foreground transition-colors sm:hidden" />
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-popover text-popover-foreground text-xs rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+                I&apos;m a chatbot that knows about Connor&apos;s background, skills, projects, and career goals
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-popover"></div>
+              </div>
+            </div>
           </div>
 
           <p className="mt-1 text-xs font-light">
