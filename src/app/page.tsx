@@ -42,7 +42,7 @@ export default async function Home() {
       <section className="flex flex-col items-start gap-8 md:flex-row-reverse md:items-center md:justify-between">
         <Image
           className="rounded-lg"
-          src="/connor.jpg"
+          src="/connor.JPG"
           alt="Photo of Connor"
           width={175}
           height={175}
