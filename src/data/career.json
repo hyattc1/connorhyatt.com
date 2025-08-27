@@ -20,8 +20,8 @@
       "start": "May 2024",
       "end": "Aug 2024",
       "description": [
-        "Built NFTVue, a NFT gallery website that allows students to connect their crypto wallets to view and verify their school event-issued NFTs",
-        "Worked on DemoConstruct, a full-stack web application (React + Python) that uses Meshroom to reconstruct 3D models from captured images"
+        "Engineered a fully operational website optimizing the user interface to facilitate equipment reservations",
+        "Implemented a PostgreSQL database system to track users and equipment usage; organized database management and enabled detailed usage analytics"
       ],
       "links": [
         {
@@ -33,14 +33,14 @@
     },
     {
       "name": "Carnegie Mellon University CyLab Security & Privacy Institute",
-      "href": "https://www.symetra.com",
+      "href": "https://www.cylab.cmu.edu",
       "title": "Cybersecurity Researcher",
       "logo": "/cmu.jpg",
       "start": "May 2023",
       "end": "Aug 2023",
       "description": [
-        "Worked on backend development for enterprise applications using modern frameworks",
-        "Built web applications and contributed to various software development projects"
+        "Specialized in secure data transportation and using Python. Managed and processed large datasets of JSON and CSV file formats to ensure the safe and efficient transfer to other teams of researchers",
+        "Introduced data validation checks, optimized data pipelines as a member of both analytics and visualization teams"
       ]
     },
     {
@@ -50,8 +50,8 @@
       "logo": "/teamrobotix.jpg",
       "start": "Sep 2021",
       "description": [
-        "Worked on backend development for enterprise applications using modern frameworks",
-        "Built web applications and contributed to various software development projects"
+        "Co-founded a 501 (c)(3) nonprofit organization dedicated to providing STEM education to K-8 students for community development, reaching over 6,000 participants annually",
+        "Gained Project management skills leading workshops and outreach events, expanding access to educational resources to Pittsburgh students"
       ],
       "links": [
         {
