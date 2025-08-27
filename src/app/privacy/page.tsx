@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-const lastUpdated = "Sep 2024";
+// Auto-generate current date
+const currentDate = new Date();
+const lastUpdated = currentDate.toLocaleDateString('en-US', { 
+  month: 'short', 
+  year: 'numeric' 
+});
 
 export default function page() {
   return (
