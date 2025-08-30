@@ -48,11 +48,15 @@ export default function ChatMessages({
 
       {/* loading */}
       {isLoading && isLastMessageUser && (
-        <div className="flex items-center justify-center">
-          <Loader2 className="mr-1.5 size-3 animate-spin text-muted-foreground" />
-          <p className="text-center text-xs text-muted-foreground">
-            Thinking...
-          </p>
+        <div className="flex items-start justify-start">
+          <Bot className="mr-2 mt-1" />
+          <div className="max-w-64 rounded border bg-background px-3 py-2">
+            <div className="flex items-center space-x-1">
+              <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.3s]"></div>
+              <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.15s]"></div>
+              <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground"></div>
+            </div>
+          </div>
         </div>
       )}
 

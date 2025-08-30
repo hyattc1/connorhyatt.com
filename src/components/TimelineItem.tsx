@@ -36,7 +36,9 @@ export default function TimelineItem({ experience }: Props) {
             <span>{end ? end : "Present"}</span>
           </time>
         )}
-        <h2 className="font-semibold leading-none">{name}</h2>
+        <Link href={href} target="_blank">
+          <h2 className="font-semibold leading-none hover:text-primary transition-colors cursor-pointer">{name}</h2>
+        </Link>
         {title && <p className="text-sm text-muted-foreground">{title}</p>}
         {description && (
           <ul className="ml-4 list-outside list-disc">

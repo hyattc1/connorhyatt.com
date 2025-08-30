@@ -88,7 +88,7 @@ export default async function Home() {
           </p>
 
           <section className="mt-6 flex flex-wrap items-center gap-4">
-            <Link href="/resume.pdf" target="_blank">
+            <Link href="/Connor Hyatt - Resume.pdf" target="_blank">
               <Button variant="outline">
                 <span className="font-semibold">Resume</span>
                 <FileDown className="ml-2 size-5" />

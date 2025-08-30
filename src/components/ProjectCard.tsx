@@ -35,7 +35,9 @@ export function ProjectCard({ project }: Props) {
         )}
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
-        <CardTitle>{name}</CardTitle>
+        <Link href={href || image}>
+          <CardTitle className="hover:text-primary transition-colors cursor-pointer">{name}</CardTitle>
+        </Link>
         <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
           {description}
         </Markdown>

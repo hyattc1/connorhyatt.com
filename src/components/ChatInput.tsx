@@ -46,6 +46,8 @@ export default function ChatInput({
         <Trash className="size-4 text-rose-500" />
       </Button>
       <Input
+        id="chat-input"
+        name="chat-input"
         autoFocus
         placeholder="Ask something..."
         // className="bg-muted"
