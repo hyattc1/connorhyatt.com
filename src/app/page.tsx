@@ -38,20 +38,20 @@ export default async function Home() {
   const posts = await getPosts(blogDirectory, LIMIT);
 
   return (
-    <article className="mt-8 flex flex-col gap-16 pb-16">
-      <section className="flex flex-col items-start gap-8 md:flex-row-reverse md:items-center md:justify-between">
+    <article className="mt-8 flex flex-col gap-16 pb-16 overflow-x-hidden">
+      <section className="flex flex-col items-start gap-6 sm:gap-8 md:flex-row-reverse md:items-center md:justify-between">
         <img
-          className="rounded-lg w-[175px]"
+          className="rounded-lg w-[150px] sm:w-[175px]"
           src="/connor.JPG"
           alt="Photo of Connor"
           style={{ borderRadius: '8px' }}
         />
-        <div className="flex max-w-[320px] flex-col sm:max-w-full">
+        <div className="flex max-w-[280px] flex-col sm:max-w-[320px] md:max-w-full">
                      <h1 className="title text-balance text-4xl sm:text-5xl">
             hi connor here. 👋
            </h1>
 
-                     <p className="mt-2 whitespace-nowrap text-sm font-medium sm:text-base">
+                     <p className="mt-2 text-sm font-medium sm:text-base">
              {calculateAge(CONNOR_BIRTH_DATE)}
              yo student from Pittsburgh, PA, USA
            </p>
