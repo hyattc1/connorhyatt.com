@@ -19,11 +19,13 @@ interface Props {
 export function ProjectCard({ project }: Props) {
   const { name, href, description, image, tags, links } = project;
 
+  const hasValidHref = href && href !== image;
+
   return (
     <Card className="flex flex-col">
       <CardHeader>
         {image && (
-          <Link href={href || image}>
+          <Link href={hasValidHref ? href : image}>
             <Image
               src={image}
               alt={name}
@@ -35,9 +37,13 @@ export function ProjectCard({ project }: Props) {
         )}
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
-        <Link href={href || image}>
-          <CardTitle className="hover:text-primary transition-colors cursor-pointer">{name}</CardTitle>
-        </Link>
+        {hasValidHref ? (
+          <Link href={href}>
+            <CardTitle className="hover:text-primary transition-colors cursor-pointer">{name}</CardTitle>
+          </Link>
+        ) : (
+          <CardTitle className="text-foreground">{name}</CardTitle>
+        )}
         <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
           {description}
         </Markdown>
