@@ -8,20 +8,20 @@
       "start": "May 2025",
       "end": "Aug 2025",
       "description": [
-        "Utilized SQL and Python to remodel an R studio reporting tool for Indexed Universal Life (IUL) insurance policies, achieving a 99.83% reduction in runtime",
-        "Standardized dataset access by unifying fragmented SQL queries into a shared enterprise data library"
+        "Rebuilt an R-based insurance reporting process in SQL/Python (Pandas), cutting runtime by 99.83% and saving 10+ hours of monthly manual work",
+        "Unified scattered SQL queries into an enterprise data library, improving accuracy and enabling consistent business intelligence access across teams"
       ]
     },
     {
       "name": "Carnegie Mellon University Extended Reality Lab",
       "href": "https://www.cmu.edu/heinz/xr-lab/5-interview-public-speaking/index.html",
-      "title": "Full Stack Developer",
+      "title": "Software Engineer",
       "logo": "/cmu.png",
       "start": "May 2024",
       "end": "Aug 2024",
       "description": [
-        "Engineered a fully operational website to facilitate equipment reservations",
-        "Implemented a PostgreSQL database system to track users and equipment usage; organized database management and enabled detailed usage analytics"
+        "Deployed CMU’s first XR Lab management system, including a web interface and backend services to handle equipment reservations and user access",
+        "Implemented a PostgreSQL database with a dashboard to monitor device reservations"
       ],
       "links": [
         {
@@ -32,15 +32,15 @@
       ]
     },
     {
-      "name": "Carnegie Mellon University CyLab Security & Privacy Institute",
+      "name": "Carnegie Mellon University Cybersecurity Institute",
       "href": "https://www.cylab.cmu.edu",
-      "title": "Cybersecurity Researcher",
+      "title": "Data Engineer",
       "logo": "/cmu.png",
       "start": "May 2023",
       "end": "Aug 2023",
       "description": [
-        "Streamlined secure data transfer by managing large JSON/CSV datasets with Python",
-        "Built validation checks and optimized pipelines across analytics and visualization teams"
+        "Built Python pipelines to validate, secure, and transfer JSON/CSV datasets, ensuring data integrity across research teams",
+        "Standardized cybersecurity datasets on attacker ideologies and behaviors, creating the foundation for predictive models to mitigate emerging threats"
       ]
     },
     {
