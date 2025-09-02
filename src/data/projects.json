@@ -3,7 +3,7 @@
     {
       "name": "Ferretti Yachts Database Construction",
       "description": "This project involved the construction of a database for Ferretti Yachts. The database was designed to store and manage information.",
-      "href": "https://www.ferrettigroup.com/en-us/Brands/Ferretti-yachts",
+      "href": "/ferretti_report.pdf",
       "image": "/ferretti.png",
       "tags": [
         "MySQL",
@@ -65,13 +65,19 @@
     {
       "name": "One Piece Baseball",
       "description": "This game features an interface inspired by the anime ワンピース, allowing users to pitch, hit, and field their way to victory",
-      "href": "https://github.com/hyattc1/one-piece-baseball",
+      "href": "https://vigorous-panther-eb5.notion.site/One-Piece-Baseball-Screens-2622ba8dcdd880edaf05ed8a9684065f",
       "image": "/onepiecebaseball.png",
       "tags": [
         "Python",
         "CMU Graphics"
       ],
+      
       "links": [
+        {
+          "name": "UI Showcase",
+          "href": "https://vigorous-panther-eb5.notion.site/One-Piece-Baseball-Screens-2622ba8dcdd880edaf05ed8a9684065f",
+          "icon": "layout-grid"
+        },
         {
           "name": "Source",
           "href": "https://github.com/hyattc1/one-piece-baseball",

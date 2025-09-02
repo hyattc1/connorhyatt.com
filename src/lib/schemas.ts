@@ -26,7 +26,10 @@ export type IconLink = z.infer<typeof iconLink>;
 const project = z.object({
   name: z.string(),
   description: z.string(),
-  href: z.string().url().optional(),
+  href: z.string().refine((val) => {
+    // Allow URLs, relative paths starting with /, and mailto links
+    return val.startsWith('http') || val.startsWith('/') || val.startsWith('mailto:');
+  }, { message: "Must be a valid URL, relative path starting with /, or mailto link" }).optional(),
   image: z.string().optional(),
   tags: z.array(z.string()),
   links: z.array(iconLink),
