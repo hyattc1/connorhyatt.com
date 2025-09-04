@@ -1,70 +1,80 @@
 ---
-title: "Introducing Propwise – My Real Estate Risk Analysis Tool"
-summary: "Propwise simplifies property evaluation by turning neighborhood data into clear, actionable insights."
+title: "Propwise – Real Estate Risk Analysis Chrome Extension"
+summary: "A Chrome extension that overlays instant real estate investment insights directly onto Zillow and Redfin property listings."
 image: "/real-estate.jpg"
 publishedAt: "2025-08-26"
 ---
 
-Hey there! I'm super excited to share one of my recent side projects: **Propwise**, a real estate risk analysis tool. It's a web application that helps investors make informed decisions by analyzing neighborhood data and market trends.
+Hey there! I’m excited to share one of my recent side projects: **Propwise**, a Chrome extension for real estate risk analysis.  
 
-This project was born from my interest in data analysis and real estate. I wanted to build something that could turn complex market data into clear, actionable insights for property investors.
+Propwise brings **investment insights directly into Zillow and Redfin listings** — crime rates, demographics, rental potential, and financial viability — all in one place, without leaving the property page.  
 
-👉 **Live here:** [Propwise Extension](https://github.com/hyattc1/Real-Estate-Risk-Analysis)  
-👨‍💻 **Source code:** [GitHub Repository](https://github.com/hyattc1/Real-Estate-Risk-Analysis)
-
----
-
-## 🧪 Why Propwise?
-
-This is a **proof of concept** to explore how data analysis can help with real estate investment decisions. I wanted to see if combining market data with a clean, intuitive interface could help investors make better decisions. This project is part experiment, part learning opportunity — and 100% focused on practical value.
-
-The goal is to simplify the complex process of property evaluation by providing clear risk assessments and market insights.
+👉 **Live here:** [Propwise Extension](https://github.com/hyattc1/Real-Estate-Risk-Analysis) (coming very soon)  
+👨‍💻 **Source code:** [GitHub Repository](https://github.com/hyattc1/Real-Estate-Risk-Analysis)  
 
 ---
 
-## 🛠️ The Tech Stack
+## 🏗️ Key Features
 
-This was a fullstack build, powered by:
+- **Property Data Scraping**  
+  Automatically pulls address, price, square footage, and other property details from Zillow/Redfin listings.  
 
-- **HTML** + **CSS** + **JavaScript** for the frontend
-- **Chrome Extension API** for browser integration
-- **Real estate APIs** for market data
-- **Data visualization** for clear insights
+- **Crime Risk Analysis**  
+  Displays risk indicators (Low/Medium/High) and a crime index score (0–50 scale).  
+
+- **Demographics (0.5 mile radius)**  
+  Ethnicity breakdown with interactive charts powered by Census data.  
+
+- **Price & Market Analysis**  
+  Price vs. median area value, histograms of local price ranges, and market positioning.  
+
+- **Income & Rent Insights**  
+  Median household income, whole-property rent estimates, and room-by-room rental viability.  
+
+- **Investment Metrics Calculator**  
+  Enter monthly expenses to instantly calculate:  
+  - Cap Rate  
+  - Cash Flow  
+  - ROI  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** HTML, CSS, JavaScript  
+- **Browser Integration:** Chrome Extension API (Manifest V3)  
+- **Data Sources:** Zillow/Redfin (scraped), Census Bureau, Crime APIs, Rentometer (currently using dummy data during development)  
+- **Visualization:** Chart.js for charts and interactive analysis  
 
 ---
 
 ## 🧩 Challenges & Highlights
 
-### 🕵️‍♂️ Working with Real Estate Data
+### 🕵️‍♂️ Handling Real Estate Data  
+Real estate data is fragmented and inconsistent. I built processing pipelines with fallback mechanisms to standardize property details, ensuring accurate analysis.  
 
-Everything started with the data. Real estate data can be complex and inconsistent across different sources. I had to build robust data processing to ensure accurate risk assessments and market analysis.
+### ⚙️ Extension Development  
+Developing a Chrome extension meant coordinating multiple layers: the popup UI, content scripts for scraping, API integrations, and a smooth UX.  
 
-### ⚙️ Building a Chrome Extension
-
-One of the most interesting parts of this project was learning how to build a Chrome extension. I had to coordinate:
-
-- The **extension interface** (HTML/CSS/JS)
-- **API integrations** for real estate data
-- **Data processing** and risk calculations
-- **User experience** optimization
-
-### ⚡ Making Data Accessible
-
-I focused on making complex real estate data feel approachable and useful. The app provides **instant analysis**, **clear visualizations**, and **actionable insights**, so investors can quickly understand market conditions and risks.
+### ⚡ Making Analysis Accessible  
+The biggest focus was usability — delivering complex data as clear, actionable insights through instant analysis and visual breakdowns.  
 
 ---
 
-## 🔮 Future Plans
+## 📖 Usage Guide
 
-This is just the start. Some features I'd love to add:
-
-- ✨ **Machine learning** for better risk prediction
-- 📊 **Advanced data visualization** and charts
-- 🎯 **Personalized recommendations** based on user preferences
-- 🧠 **Integration with more data sources** for comprehensive analysis
+1. Navigate to a property listing on Zillow or Redfin.  
+2. Click the Propwise extension icon in Chrome.  
+3. Instantly view property details, crime data, demographics, rent estimates, and investment metrics.  
+4. Enter monthly expenses into the calculator to see cash flow, ROI, and cap rate.  
 
 ---
 
-Thanks for reading, and let me know what you think! Whether you're into data analysis, real estate, or just like a good side project story — I hope Propwise gave you a spark of inspiration.
+## 📝 License
+This project is licensed under the MIT License — see the LICENSE file for details.  
+
+---
+
+Thanks for checking out **Propwise**! This project combines my interests in **data analysis, visualization, and real estate** into a tool designed to make investment decisions faster and more informed. Whether you’re a developer, investor, or just curious, I’d love feedback.  
 
 — Connor

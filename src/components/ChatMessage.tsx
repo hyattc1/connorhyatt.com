@@ -29,13 +29,18 @@ export default function ChatMessage({
       >
         <Markdown
           components={{
-            a: ({ node, href, ...props }) => (
-              <Link
-                href={href ?? ""}
-                className="underline underline-offset-2"
-                {...props}
-              />
-            ),
+            a: ({ node, href, ...props }) => {
+              const isExternal = href?.startsWith('http') && !href?.includes('connorhyatt.com');
+              return (
+                <Link
+                  href={href ?? ""}
+                  className="underline underline-offset-2"
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  {...props}
+                />
+              );
+            },
             p: ({ node, ...props }) => (
               <p className="mt-3 first:mt-0" {...props} />
             ),

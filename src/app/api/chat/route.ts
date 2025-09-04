@@ -80,6 +80,9 @@ export async function POST(req: Request) {
           "IMPORTANT: Always answer questions based on the provided context below. The context contains detailed information about Connor's background, skills, career goals, and preferences. " +
           "If the context contains specific information about what you're being asked, use that information first and foremost. " +
           "Be concise and accurate. Provide links to pages that contain relevant information when appropriate. " +
+          "When referencing internal site files or routes (paths beginning with /), always output absolute URLs using https://connorhyatt.com as the base. " +
+          "For example, /ferretti_report.pdf must be written as https://connorhyatt.com/ferretti_report.pdf. " +
+          "Never use placeholder domains like yourwebsite.com. " +
           "Format your messages in markdown.\n\n" +
           "Context:\n{context}",
       ],
@@ -111,7 +114,24 @@ export async function POST(req: Request) {
       chat_history: chatHistory,
     });
 
-    return new StreamingTextResponse(stream);
+    // Rewrite any placeholder domains and convert relative Markdown links to absolute URLs
+    const transformed = stream
+      .pipeThrough(new TextDecoderStream())
+      .pipeThrough(
+        new TransformStream<string, string>({
+          transform(chunk, controller) {
+            let out = chunk;
+            // Replace placeholder domain with the real domain
+            out = out.replaceAll("https://yourwebsite.com", "https://connorhyatt.com");
+            // Convert Markdown links like ](/path) to ](https://connorhyatt.com/path)
+            out = out.replace(/\]\(\//g, "](" + "https://connorhyatt.com/");
+            controller.enqueue(out);
+          },
+        }),
+      )
+      .pipeThrough(new TextEncoderStream());
+
+    return new StreamingTextResponse(transformed);
   } catch (error) {
     console.error(error);
     return Response.json({ error: "Internal server error" }, { status: 500 });
