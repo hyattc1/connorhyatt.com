@@ -10,18 +10,17 @@
 
 ## Technical Skills & Interests
 - **Programming Languages**: Python, SQL, Java, HTML, CSS, JavaScript, Ruby
-- **Frameworks & Libraries**: Git/GitHub, Pandas, Excel, R, Tableau, Figma, Jupyter, OpenCV, NLTK, Agile, ERP
-- **Areas of Expertise**: Data Analytics & Business Intelligence, Database Design & Management, Full-Stack Development, Leadership & Collaboration
+- **Frameworks & Libraries**: Git/GitHub, Pandas, Excel, R, Tableau, Figma, Jupyter, OpenCV, NLTK, Agile Methodology, ERP, Docker
+- **Areas of Expertise**: Data Analytics & Business Intelligence, Database Design & Management, Software Development, Leadership & Collaboration
 - **Databases**: Snowflake, PostgreSQL, MongoDB, MySQL, Access
 
 ## Career Goals & Availability
-- **Seeking**: Tech internships and full-time positions relating to Product Management, Data, or Software Engineering
+- **Seeking**: Tech internships and full-time positions relating to Data/Software Engineering
 - **Available**: Starting May 2025
-- **Preferred Roles**: Product Manager, Software Engineer, Data Scientist, Full-Stack Developer
-- **Industries of Interest**: Technology firms, AI/ML startups, consulting, and data-driven enterprises
+- **Preferred Roles**: Software Engineer, Data Engineer, and data-driven enterprises
 
 ## Personal Interests & Hobbies
-- Lifting (5+ days per week)
+- Lifting (4+ days per week)
 - Learning new technologies and frameworks
 - Working on side projects that solve real-world problems
 - Volleyball and golf
