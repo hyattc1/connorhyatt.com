@@ -57,7 +57,7 @@ export default async function Home() {
            </p>
 
           <p className="mt-4 max-w-sm text-balance text-sm sm:text-base">
-            Analytics first, tech second. I uncover meaning in data and build tools that work.
+            I create reliable, data-driven software and optimize performance at scale.
           </p>
 
           <div className="mt-6 flex items-center gap-1">
