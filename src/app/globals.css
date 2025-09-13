@@ -85,12 +85,18 @@
   a, button, [role="button"] {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
   }
   .title {
     @apply font-serif text-5xl tracking-wide decoration-border/75 decoration-2;
   }
   .link {
     @apply text-muted-foreground transition-colors hover:text-foreground;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    cursor: pointer;
   }
   .prose pre {
     @apply overflow-x-auto rounded-lg bg-accent px-5 py-4 text-sm;
@@ -106,5 +112,46 @@
   }
   .input-error {
     @apply ml-1 mt-2 text-sm text-rose-400;
+  }
+  
+  /* Mobile navigation fixes */
+  nav ul li a {
+    display: block;
+    padding: 8px 12px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Ensure header is above other elements */
+  header {
+    position: relative;
+    z-index: 50;
+  }
+  
+  /* Fix potential touch blocking */
+  * {
+    -webkit-touch-callout: none;
+  }
+  
+  /* Fix iOS Safari 300ms touch delay */
+  a, button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  a, button, [role="button"], input, textarea {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
