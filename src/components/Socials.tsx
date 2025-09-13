@@ -9,7 +9,8 @@ export default function Socials() {
   const socials = socialSchema.parse(data).socials;
 
   const handleEmailClick = async (e: React.MouseEvent) => {
-    e.preventDefault();
+    // Ensure this click cannot affect surrounding links/navigation
+    e.stopPropagation();
     try {
       await navigator.clipboard.writeText("connorhyatt1@gmail.com");
       toast.success("Email copied to clipboard!");

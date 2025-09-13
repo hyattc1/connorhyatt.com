@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import ChatToggle from "./ChatToggle";
 import ThemeToggle from "./ThemeToggle";
-import { useRouter } from "next/navigation";
 
 const navLinks = [
   {
@@ -25,14 +22,6 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const router = useRouter();
-
-  const handleMobileClick = (href: string, name: string) => {
-    console.log('Mobile navigation clicked:', name);
-    // Force immediate navigation for mobile
-    router.push(href);
-  };
-
   return (
     <header className="sticky top-0 z-50 bg-background/75 backdrop-blur-sm">
       <div className="mx-auto max-w-3xl px-8 py-6">
@@ -40,20 +29,19 @@ export default function Header() {
           <ul className="flex gap-4 sm:gap-8">
             {navLinks.map((nav, id) => (
               <li key={id}>
-                <button
-                  onClick={() => handleMobileClick(nav.href, nav.name)}
+                <Link 
+                  href={nav.href} 
                   className="link"
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    padding: '8px 12px',
-                    cursor: 'pointer',
-                    touchAction: 'manipulation',
-                    WebkitTapHighlightColor: 'transparent'
+                  onClick={(e) => {
+                    console.log('Navigation clicked:', nav.name, 'href:', nav.href);
+                    // Prevent any potential issues
+                    e.preventDefault();
+                    // Force navigation
+                    window.location.href = nav.href;
                   }}
                 >
                   {nav.name}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
