@@ -1,3 +1,5 @@
+"use client";
+
 import { PostMetadata } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
@@ -16,7 +18,15 @@ export default function Posts({ posts }: Props) {
           {posts.map((post, i) => (
             <li key={i}>
               {i !== 0 && i !== posts.length && <Separator />}
-              <Link href={`/blog/${post.slug}`}>
+              <Link
+                href={`/blog/${post.slug}`}
+                onClick={(e) => {
+                  // Ensure navigation works even if client routing is impacted
+                  e.preventDefault();
+                  window.location.href = `/blog/${post.slug}`;
+                }}
+                className="block"
+              >
                 <div className="flex flex-col justify-between p-6 sm:flex-row sm:items-center">
                   <div className="max-w-md md:max-w-lg">
                     <h3 className="text-lg font-semibold">{post.title}</h3>
