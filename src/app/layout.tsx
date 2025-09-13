@@ -22,6 +22,7 @@ const calistoga = Calistoga({
 export const metadata: Metadata = {
   title: "Connor Hyatt",
   description: "My personal site to showcase my technical work and opinions.",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   openGraph: {
     title: "Connor Hyatt - Portfolio",
     description: "Analytics first, tech second. I uncover meaning in data and build tools that work.",
@@ -63,6 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <link rel="icon" type="image/png" href="/CHlogo.png?v=3" />
         <link rel="shortcut icon" type="image/png" href="/CHlogo.png?v=3" />
         <link rel="apple-touch-icon" href="/CHlogo.png?v=3" />

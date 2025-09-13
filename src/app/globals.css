@@ -80,6 +80,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a, button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
   .title {
     @apply font-serif text-5xl tracking-wide decoration-border/75 decoration-2;
