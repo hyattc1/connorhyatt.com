@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 
@@ -15,7 +17,14 @@ export default function LinkWithIcon({
   text,
 }: LinkWithIconProps) {
   return (
-    <Link href={href} className="link flex items-center gap-2 font-light">
+    <Link 
+      href={href} 
+      className="link flex items-center gap-2 font-light"
+      onClick={(e) => {
+        e.preventDefault();
+        window.location.href = href;
+      }}
+    >
       {position === "left" && icon}
       <span>{text}</span>
       {position === "right" && icon}
