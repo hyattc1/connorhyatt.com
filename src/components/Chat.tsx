@@ -28,9 +28,9 @@ export default function Chat() {
       <Accordion type="single" collapsible className="flexs relative z-40" value={isOpen ? "item-1" : ""} onValueChange={toggleAccordion}>
         <AccordionItem
           value="item-1"
-          className="fixed bottom-8 right-8 w-80 rounded-md border bg-background"
+          className="fixed bottom-8 right-8 w-80 rounded-md border bg-foreground text-background border-foreground/20"
         >
-          <AccordionTrigger className="border-b px-6">
+          <AccordionTrigger className="border-b border-background/20 px-6">
             <ChatHeader />
           </AccordionTrigger>
           <AccordionContent className="flex max-h-96 min-h-80 flex-col justify-between p-0">
