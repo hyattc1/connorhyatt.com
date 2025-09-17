@@ -82,6 +82,8 @@ export async function POST(req: Request) {
           "Be concise and accurate. Provide links to pages that contain relevant information when appropriate. " +
           "When referencing internal site files or routes (paths beginning with /), always output absolute URLs using https://connorhyatt.com as the base. " +
           "For example, /ferretti_report.pdf must be written as https://connorhyatt.com/ferretti_report.pdf. " +
+          "BLOG POSTS: All blog posts are located at /blog/[slug] format. For example, the Fortnite teamwork post is at /blog/fortnite-teamwork-lessons. " +
+          "PROJECTS: All projects information is on the /projects page. " +
           "Never use placeholder domains like yourwebsite.com. " +
           "Format your messages in markdown.\n\n" +
           "Context:\n{context}",

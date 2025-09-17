@@ -83,10 +83,14 @@ async function generateEmbeddings() {
         // For .mdx files, only get content after frontmatter
         // For .md files, use the entire content
         const pageContentTrimmed = post.metadata.source.endsWith(".mdx") 
-          ? post.pageContent.split("---")[1] 
+          ? post.pageContent.split("---")[2] || post.pageContent.split("---")[1] 
           : post.pageContent;
 
-        return { pageContent: pageContentTrimmed, metadata: post.metadata };
+        // Generate proper URL for blog posts
+        const filename = post.metadata.source.replace(/\\/g, "/").split("/").pop()?.replace(/\.(mdx?|md)$/, "");
+        const url = `/blog/${filename}`;
+
+        return { pageContent: pageContentTrimmed, metadata: { ...post.metadata, url } };
       });
 
     console.log(`Processed ${posts.length} blog posts`);
