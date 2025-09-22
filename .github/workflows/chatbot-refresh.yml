@@ -1,0 +1,18 @@
+name: Chatbot Refresh (AstraDB Keep-Alive)
+
+on:
+  schedule:
+    # Runs once a day at 08:00 UTC
+    - cron: "0 8 * * *"
+  workflow_dispatch: # allow manual run from GitHub UI
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping AstraDB (List Keyspaces)
+        run: |
+          curl -s -o /dev/null -w "%{http_code}\n" \
+            -H "X-Cassandra-Token: ${{ secrets.ASTRA_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            "https://${{ secrets.ASTRA_DB_ID }}-us-east-2.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces"
