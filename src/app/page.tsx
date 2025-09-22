@@ -62,7 +62,7 @@ export default async function Home() {
 
           <div className="mt-6 flex items-center gap-1">
             <p className="text-balance text-sm font-semibold sm:text-base">
-              For Q&A, raise a ticket with <ClickableConnorSupport />
+              For Q&A, send a message to <ClickableConnorSupport />
             </p>
             <div className="group relative">
               <Info className="hidden size-5 animate-bounce text-foreground group-hover:text-muted-foreground transition-colors sm:block" />
