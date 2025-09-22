@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Socials from "./Socials";
 
@@ -9,11 +11,25 @@ export default function Footer() {
         <section className="mt-8 text-center sm:mt-0 sm:text-left">
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()}{" "}
-            <Link className="link" href="/">
+            <Link 
+              className="link" 
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "/";
+              }}
+            >
               connorhyatt.com
             </Link>{" "}
             |{" "}
-            <Link className="link font-bold" href="/privacy">
+            <Link 
+              className="link font-bold" 
+              href="/privacy"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "/privacy";
+              }}
+            >
               privacy?
             </Link>
           </p>
