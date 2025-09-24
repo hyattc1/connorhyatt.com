@@ -12,13 +12,31 @@ jobs:
     steps:
       - name: Send message to chatbot
         run: |
-          curl -s -L -X POST "https://connorhyatt.com/api/chat" \
+          echo "Run started at: $(date -u)"
+
+          # Send dummy message, capture output and status
+          RESPONSE=$(curl -s -L \
+            --connect-timeout 5 \
+            --max-time 10 \
+            -w "HTTPSTATUS:%{http_code}" \
+            -X POST "https://connorhyatt.com/api/chat" \
             -H "Content-Type: application/json" \
-            -d '{
-              "messages": [
-                {
-                  "role": "user", 
-                  "content": "hello"
-                }
-              ]
-            }'
+            -d '{"messages":[{"role":"user","content":"hello"}]}')
+
+          # Split body and status
+          BODY=$(echo "$RESPONSE" | sed -e 's/HTTPSTATUS\:.*//')
+          STATUS=$(echo "$RESPONSE" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+
+          # Show logs
+          echo "HTTP Status: $STATUS"
+          echo "Reply (first 200 chars):"
+          echo "$BODY" | head -c 200
+          echo ""
+
+          # Fail job if not 200
+          if [ "$STATUS" -ne 200 ]; then
+            echo "❌ Chatbot request failed with status $STATUS"
+            exit 1
+          fi
+
+          echo "Run finished at: $(date -u)"
