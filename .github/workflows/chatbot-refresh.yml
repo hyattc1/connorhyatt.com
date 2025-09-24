@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Send message to chatbot
         run: |
-          curl -X POST "https://connorhyatt.com/api/chat" \
+          curl -s -L -X POST "https://connorhyatt.com/api/chat" \
             -H "Content-Type: application/json" \
             -d '{
               "messages": [
