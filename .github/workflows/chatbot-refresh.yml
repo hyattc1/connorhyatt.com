@@ -1,18 +1,24 @@
-name: Chatbot Refresh (AstraDB Keep-Alive)
+name: Keep AstraDB Active
 
 on:
   schedule:
-    # Runs once a day at 08:00 UTC
-    - cron: "0 8 * * *"
-  workflow_dispatch: # allow manual run from GitHub UI
+    # Run every 12 hours
+    - cron: "0 */12 * * *"
+  workflow_dispatch: # allows manual trigger
 
 jobs:
-  refresh:
+  ping-chatbot:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping AstraDB (List Keyspaces)
+      - name: Send message to chatbot
         run: |
-          curl -s -o /dev/null -w "%{http_code}\n" \
-            -H "X-Cassandra-Token: ${{ secrets.ASTRA_TOKEN }}" \
+          curl -X POST "https://connorhyatt.com/api/chat" \
             -H "Content-Type: application/json" \
-            "https://${{ secrets.ASTRA_DB_ID }}-us-east-2.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces"
+            -d '{
+              "messages": [
+                {
+                  "role": "user", 
+                  "content": "hello"
+                }
+              ]
+            }'
