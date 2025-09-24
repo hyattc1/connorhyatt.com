@@ -1,21 +1,32 @@
-name: Keep AstraDB Awake
+name: Keep AstraDB Active
 
 on:
   schedule:
-    # Run twice daily at 6 AM and 6 PM UTC to prevent hibernation
-    - cron: '0 6,18 * * *'
-  workflow_dispatch: # Allows manual triggering from GitHub UI
+    # Run every 12 hours
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
 
 jobs:
-  ping-astra:
+  ping-chatbot:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping AstraDB endpoint
+      - name: Ping AstraDB via chatbot /api/ping
         run: |
-          curl -X POST "https://connorhyatt.com/api/ping" \
-            -H "Content-Type: application/json" \
-            --fail --silent --show-error
-        continue-on-error: true
+          echo "Run started at: $(date -u)"
 
-      - name: Log ping attempt
-        run: echo "AstraDB ping completed at $(date)"
+          STATUS=$(curl -s -o /dev/null -L \
+            --connect-timeout 5 \
+            --max-time 20 \
+            -w "%{http_code}" \
+            -X POST "https://connorhyatt.com/api/ping" \
+            -H "Content-Type: application/json")
+
+          echo "HTTP Status: $STATUS"
+
+          if [ "$STATUS" -ne 200 ]; then
+            echo "❌ Ping failed with status $STATUS"
+            exit 1
+          fi
+
+          echo "✅ AstraDB kept alive successfully"
+          echo "Run finished at: $(date -u)"
