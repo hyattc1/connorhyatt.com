@@ -1,6 +1,17 @@
 {
   "career": [
     {
+      "name": "Lunon",
+      "href": "https://www.lunon.ai",
+      "title": "Chief Technology Officer",
+      "logo": "/lunon.png",
+      "start": "September 2025",
+      "end": "Present",
+      "description": [
+        "Building full-stack retrieval-augmented generation (RAG) AI platform, enabling consulting teams to query, analyze, and apply firm knowledge with unprecedented accuracy"
+      ]
+    },
+    {
       "name": "Symetra",
       "href": "https://www.symetra.com",
       "title": "Data Analyst",
