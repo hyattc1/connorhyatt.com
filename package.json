@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:log": "next dev 2>&1 | tee -a dev-server.log",
-    "build": "npm run gen && next build",
-    "gen": "npx ts-node ./scripts/generate.ts",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
