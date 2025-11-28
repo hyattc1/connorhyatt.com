@@ -1,6 +1,7 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import { JSX } from "react";
 import { highlight } from "sugar-high";
+import Callout from "./Callout";
 import Counter from "./Counter";
 
 function Code({ children, ...props }: any) {
@@ -10,6 +11,7 @@ function Code({ children, ...props }: any) {
 
 const components = {
   code: Code,
+  Callout,
   Counter,
 };
 
