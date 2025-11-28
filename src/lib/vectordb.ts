@@ -10,18 +10,24 @@ if (!endpoint || !token || !collection) {
   throw new Error("Please set environmental variables for Astra DB!");
 }
 
+// Cache embeddings instance to avoid recreation
+const embeddings = new OpenAIEmbeddings({ model: "text-embedding-3-small" });
+
+// Cache vector store instance
+let vectorStorePromise: Promise<AstraDBVectorStore> | null = null;
+
 export async function getVectorStore() {
-  return AstraDBVectorStore.fromExistingIndex(
-    new OpenAIEmbeddings({ model: "text-embedding-3-small" }),
-    {
+  if (!vectorStorePromise) {
+    vectorStorePromise = AstraDBVectorStore.fromExistingIndex(embeddings, {
       token,
       endpoint,
       collection,
       collectionOptions: {
         vector: { dimension: 1536, metric: "cosine" },
       },
-    },
-  );
+    });
+  }
+  return vectorStorePromise;
 }
 
 export async function getEmbeddingsCollection() {

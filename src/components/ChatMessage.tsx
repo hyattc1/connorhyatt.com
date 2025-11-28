@@ -23,7 +23,7 @@ export default function ChatMessage({
       {isBot && <Bot className="mr-2" />}
       <div
         className={cn(
-          "max-w-64 rounded px-3 py-2",
+          "max-w-md rounded-lg px-4 py-2.5 text-sm leading-relaxed",
           isBot ? "bg-foreground text-background border border-background" : "bg-foreground text-background border border-background",
         )}
       >
@@ -34,7 +34,7 @@ export default function ChatMessage({
               return (
                 <Link
                   href={href ?? ""}
-                  className="underline underline-offset-2"
+                  className="text-background/80 hover:text-background underline underline-offset-2 transition-colors"
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
                   {...props}
@@ -42,11 +42,11 @@ export default function ChatMessage({
               );
             },
             p: ({ node, ...props }) => (
-              <p className="mt-3 first:mt-0" {...props} />
+              <p className="mt-2 first:mt-0 last:mb-0" {...props} />
             ),
             ul: ({ node, ...props }) => (
               <ul
-                className="mt-3 list-inside list-disc first:mt-0"
+                className="mt-2 list-inside list-disc first:mt-0 space-y-1"
                 {...props}
               />
             ),
