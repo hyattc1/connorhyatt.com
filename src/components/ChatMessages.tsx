@@ -49,7 +49,7 @@ export default function ChatMessages({
       {/* loading */}
       {isLoading && isLastMessageUser && (
         <div className="flex items-start justify-start">
-          <Bot className="mr-2 mt-1" />
+          <Bot className="mr-2 mt-1 size-5 shrink-0" />
           <div className="max-w-md rounded-lg bg-foreground text-background border border-background px-4 py-2.5">
             <div className="flex items-center space-x-1">
               <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.3s]"></div>
