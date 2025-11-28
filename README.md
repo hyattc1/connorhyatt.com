@@ -26,8 +26,6 @@ A clean, minimal portfolio website built with Next.js, Tailwind CSS, and Shadcn 
 - Shadcn UI
 - OpenAI API (chatbot)
 - Vercel (hosting)
-- AstraDB (vector storage)
-- Upstash (caching)
 - Resend (email)
 
 ## Getting Started
@@ -45,10 +43,9 @@ npm run dev
 
 ```env
 OPENAI_API_KEY=your_key
-ASTRA_DB_APPLICATION_TOKEN=your_token
-ASTRA_DB_ENDPOINT=your_endpoint
-UPSTASH_REDIS_REST_URL=your_url
-UPSTASH_REDIS_REST_TOKEN=your_token
+RESEND_API_KEY=your_key
+CONTACT_TO_EMAIL=your_email (optional, defaults to connorhyatt1@gmail.com)
+RESEND_FROM=your_from_email (optional)
 ```
 
 ## Customization
