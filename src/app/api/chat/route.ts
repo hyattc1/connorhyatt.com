@@ -3,6 +3,28 @@ import { OpenAIStream, StreamingTextResponse } from "ai";
 
 const openai = new OpenAI();
 
+// Simple in-memory rate limiter
+const rateLimit = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT = 20; // requests per window
+const RATE_WINDOW = 60 * 1000; // 1 minute in ms
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimit.get(ip);
+
+  if (!record || now > record.resetTime) {
+    rateLimit.set(ip, { count: 1, resetTime: now + RATE_WINDOW });
+    return false;
+  }
+
+  if (record.count >= RATE_LIMIT) {
+    return true;
+  }
+
+  record.count++;
+  return false;
+}
+
 const SYSTEM_PROMPT = `You are Connor Support, Connor Hyatt's portfolio chatbot. Be casual, warm, and helpful.
 
 CONNOR'S INFO:
@@ -27,7 +49,7 @@ PROJECTS:
 
 RESPONSE RULES:
 - Keep responses 2-3 sentences for simple questions, up to 5 for detailed ones
-- For greetings like "hello" or "hi", introduce yourself briefly, explain you can help visitors learn about Connor, and give 2-3 example topics they could ask about (like his work at Lunon, his projects, skills, or background)
+- For greetings like "hello" or "hi", introduce yourself briefly and suggest 2-3 things to ask about WITH links, e.g. "his work at [Lunon](https://www.lunon.ai), his [projects](https://connorhyatt.com/projects), or his [resume](https://connorhyatt.com/resume.pdf)"
 - LINKS: Always use FULL markdown link syntax with the URL. Write [resume](https://connorhyatt.com/resume.pdf) NOT just [resume]. Every link MUST include the full URL in parentheses.
 - NEVER use em dashes or en dashes. Use commas, periods, or hyphens instead
 - Embed links naturally in sentences, no bullet lists of links
@@ -44,11 +66,20 @@ COPY THESE EXACT LINK FORMATS:
 - [GitHub](https://github.com/hyattc1)`;
 
 export async function POST(req: Request) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
+  
+  if (isRateLimited(ip)) {
+    return Response.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   try {
     const { messages } = await req.json();
 
     const response = await openai.chat.completions.create({
-      model: "gpt-5-mini",
+      model: "gpt-4o-mini",
       stream: true,
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
